@@ -1,0 +1,20 @@
+html, body {
+    font-family: 'Arial', serif;
+    background: lightgray;
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    width: fit-content;
+}
+
+.settings-container > *:nth-child(n) {
+    margin: 0.5rem;
+    width: 7em;
+
+    display: flex;
+    flex-direction: column;
+}
