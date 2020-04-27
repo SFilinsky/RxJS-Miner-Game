@@ -8,26 +8,31 @@
         <title>RxJS Minesweeper</title>
     </head>
     <body>
-        <h1>Minesweeper</h1>
+        <div id="game-container">
+            <h1>Minesweeper</h1>
 
-        <form class='settings-container'>
+            <form class='settings-container'>
 
-            <span>
-                <label for='mines-number'> Mines Number </label>
-                <input type='number' id='mines-number'/>
-            </span>
+                <span>
+                    <label for='mines-number'> Mines Number </label>
+                    <input type='number' id='mines-number'/>
+                </span>
 
-            <span>
-                <label for='field-size'> Field Size </label>
-                <input type='number' id='field-size'/>
-            </span>
+                <span>
+                    <label for='field-size'> Field Size </label>
+                    <input type='number' id='field-size'/>
+                </span>
 
-            <span>
-                <button type="button" id="start-button"> Start </button>
-            </span>
-        </form>
+                <span>
+                    <button type="button" id="start-button"> Start </button>
+                </span>
+            </form>
 
-        <div class='mine-container'>
+            <div id='mines-container'>
+            </div>
+        </div>
+        <div id="dialog-container">
+
         </div>
     </body>
 </html>

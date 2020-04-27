@@ -1,4 +1,4 @@
-import {fromEvent} from "rxjs";
+import {fromEvent, merge} from "rxjs";
 import {map, pairwise, startWith, tap} from "rxjs/operators";
 
 import {DefaultSettings} from "../default-settings";
@@ -14,7 +14,10 @@ export const MinesNumberFeature = {
     DefaultSettings.MINES_NUMBER_MAX
   ),
 
-  minesNumberInput$: fromEvent(MyElements.minesNumberInput,'input')
+  minesNumberInput$: merge(
+    fromEvent(MyElements.minesNumberInput,'input'),
+    fromEvent(MyElements.minesNumberInput,'change')
+  )
     .pipe(
       map(event => {
         return extractInput(event).value;

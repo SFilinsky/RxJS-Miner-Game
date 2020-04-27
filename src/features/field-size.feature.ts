@@ -1,4 +1,4 @@
-import {fromEvent} from "rxjs";
+import {fromEvent, merge} from "rxjs";
 import {map, pairwise, startWith, tap} from "rxjs/operators";
 import {extractInput} from "../misc";
 
@@ -13,7 +13,10 @@ export const FieldSizeFeature = {
     DefaultSettings.FIELD_SIZE_MAX
   ),
 
-  fieldSizeInput$: fromEvent(MyElements.fieldSizeInput,'input')
+  fieldSizeInput$: merge(
+    fromEvent(MyElements.fieldSizeInput,'input'),
+    fromEvent(MyElements.fieldSizeInput,'change')
+  )
     .pipe(
       map(event => {
         return extractInput(event).value;
@@ -32,7 +35,7 @@ export const FieldSizeFeature = {
             return prev;
           }
         }),
-        startWith(DefaultSettings.MINES_NUMBER),
+        startWith(DefaultSettings.FIELD_SIZE),
         tap((value: number) => MyElements.fieldSizeInput.value = '' + value)
       )
   },

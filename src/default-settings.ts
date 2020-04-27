@@ -7,7 +7,7 @@ export const DefaultSettings = {
 
 
   /* Field Size */
-  FIELD_SIZE: 5,
+  FIELD_SIZE: 8,
   FIELD_SIZE_MAX: 15,
   FIELD_SIZE_MIN: 3,
 

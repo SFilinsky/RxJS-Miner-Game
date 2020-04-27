@@ -1,6 +1,21 @@
 html, body {
     font-family: 'Arial', serif;
-    background: lightgray;
+    background: lightgrey;
+}
+
+body {
+    display: flex;
+    justify-content: stretch;
+    align-content: stretch;
+}
+
+#game-container {
+    width: fit-content;
+}
+
+#dialog-container {
+    padding: 0.67em;
+    flex: 1 1 auto;
 }
 
 .settings-container {
@@ -18,3 +33,62 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+
+#mines-container {
+    width: fit-content;
+    padding: 0.5rem;
+
+    font-size: 200%;
+
+    display: grid;
+}
+
+#mines-container > *:nth-child(n) {
+
+    width: 1em;
+    height: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid gray;
+}
+
+#mines-container > *:nth-child(n):not(.opened):hover {
+    background-color: aliceblue;
+}
+
+#mines-container > *:nth-child(n).opened {
+    background-color: whitesmoke;
+}
+
+
+#mines-container > *:nth-child(n).mined.opened {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('bomb.jpeg');
+}
+
+.dialog-message {
+    animation: fade-out 1s ease-out 2s;
+    margin: 0.25rem 0;
+}
+
+.dialog-message.error {
+    color: red;
+}
+
+@keyframes fade-out {
+
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+

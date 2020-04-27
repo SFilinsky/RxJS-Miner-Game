@@ -1,5 +1,7 @@
 export const MyElements = {
 
+  dialogContainer: document.getElementById('dialog-container') as HTMLInputElement,
+
   fieldSizeInput: document.getElementById('field-size') as HTMLInputElement,
   minesNumberInput: document.getElementById('mines-number') as HTMLInputElement,
 
